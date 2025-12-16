@@ -75,6 +75,165 @@
 				"header": []
 			},
 			"response": []
+		},
+		{
+			"name": "sin",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "сos",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "ctg",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Subtract operation returns status 200\", function() {",
+							"    pm.expect(pm.response.code).to.eql(200);",
+							"});",
+							"",
+							"pm.test(\"Subtract operation returns correct result\", function() {",
+							"    const result = parseFloat(pm.response.text());",
+							"    pm.expect(result).to.be.a('number');",
+							"    pm.expect(isNaN(result)).to.be.false;",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "tan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Multiply operation returns status 200\", function() {",
+							"    pm.expect(pm.response.code).to.eql(200);",
+							"});",
+							"",
+							"pm.test(\"Multiply operation returns correct result\", function() {",
+							"    const result = parseFloat(pm.response.text());",
+							"    pm.expect(result).to.be.a('number');",
+							"    pm.expect(isNaN(result)).to.be.false;",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "pow",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "root",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Subtract operation returns status 200\", function() {",
+							"    pm.expect(pm.response.code).to.eql(200);",
+							"});",
+							"",
+							"pm.test(\"Subtract operation returns correct result\", function() {",
+							"    const result = parseFloat(pm.response.text());",
+							"    pm.expect(result).to.be.a('number');",
+							"    pm.expect(isNaN(result)).to.be.false;",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "exp",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Subtract operation returns status 200\", function() {",
+							"    pm.expect(pm.response.code).to.eql(200);",
+							"});",
+							"",
+							"pm.test(\"Subtract operation returns correct result\", function() {",
+							"    const result = parseFloat(pm.response.text());",
+							"    pm.expect(result).to.be.a('number');",
+							"    pm.expect(isNaN(result)).to.be.false;",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "pi",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Multiply operation returns status 200\", function() {",
+							"    pm.expect(pm.response.code).to.eql(200);",
+							"});",
+							"",
+							"pm.test(\"Multiply operation returns correct result\", function() {",
+							"    const result = parseFloat(pm.response.text());",
+							"    pm.expect(result).to.be.a('number');",
+							"    pm.expect(isNaN(result)).to.be.false;",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	],
 	"event": [
