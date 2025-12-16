@@ -1,0 +1,341 @@
+[
+    {
+        "id": "4e06457bb2ac519c",
+        "type": "tab",
+        "label": "Calculator",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0c1bc1803fca01d8",
+        "type": "switch",
+        "z": "4e06457bb2ac519c",
+        "name": "",
+        "property": "payload.a",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 350,
+        "y": 320,
+        "wires": [
+            [
+                "0b887cbc2d20c5f7"
+            ],
+            [
+                "73fd6c396fe8ef29"
+            ]
+        ]
+    },
+    {
+        "id": "73fd6c396fe8ef29",
+        "type": "change",
+        "z": "4e06457bb2ac519c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload.a) / $number(payload.b)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 340,
+        "wires": [
+            [
+                "bcbe04738052a7f9"
+            ]
+        ]
+    },
+    {
+        "id": "0b887cbc2d20c5f7",
+        "type": "change",
+        "z": "4e06457bb2ac519c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload.a) / $number(payload.b)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 300,
+        "wires": [
+            [
+                "bcbe04738052a7f9"
+            ]
+        ]
+    },
+    {
+        "id": "72f88ea2daf19b6f",
+        "type": "change",
+        "z": "4e06457bb2ac519c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload.a) * $number(payload.b)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 240,
+        "wires": [
+            [
+                "77309208139fdf34"
+            ]
+        ]
+    },
+    {
+        "id": "e295ed3dcb44bf5d",
+        "type": "change",
+        "z": "4e06457bb2ac519c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload.a) - $number(payload.b)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 180,
+        "wires": [
+            [
+                "b77234dc9ca3692b"
+            ]
+        ]
+    },
+    {
+        "id": "4d74aaab6bd7ca2b",
+        "type": "change",
+        "z": "4e06457bb2ac519c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload.a) + $number(payload.b)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 120,
+        "wires": [
+            [
+                "ea2a5e18019c392c"
+            ]
+        ]
+    },
+    {
+        "id": "cf5f9315d1696643",
+        "type": "http in",
+        "z": "4e06457bb2ac519c",
+        "name": "",
+        "url": "/calculator/add",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 120,
+        "wires": [
+            [
+                "4d74aaab6bd7ca2b"
+            ]
+        ]
+    },
+    {
+        "id": "07259424cb6a6bf5",
+        "type": "http in",
+        "z": "4e06457bb2ac519c",
+        "name": "",
+        "url": "/calculator/sub",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 180,
+        "wires": [
+            [
+                "e295ed3dcb44bf5d"
+            ]
+        ]
+    },
+    {
+        "id": "34b50ac802af8c48",
+        "type": "http in",
+        "z": "4e06457bb2ac519c",
+        "name": "",
+        "url": "/calculator/div",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 320,
+        "wires": [
+            [
+                "0c1bc1803fca01d8"
+            ]
+        ]
+    },
+    {
+        "id": "2f8b021033340a21",
+        "type": "http in",
+        "z": "4e06457bb2ac519c",
+        "name": "",
+        "url": "/calculator/mul",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 240,
+        "wires": [
+            [
+                "72f88ea2daf19b6f"
+            ]
+        ]
+    },
+    {
+        "id": "ea2a5e18019c392c",
+        "type": "http response",
+        "z": "4e06457bb2ac519c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 610,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b77234dc9ca3692b",
+        "type": "http response",
+        "z": "4e06457bb2ac519c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 610,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "77309208139fdf34",
+        "type": "http response",
+        "z": "4e06457bb2ac519c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 610,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "bcbe04738052a7f9",
+        "type": "http response",
+        "z": "4e06457bb2ac519c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 690,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "42ed4edb85aa10be",
+        "type": "http in",
+        "z": "4e06457bb2ac519c",
+        "name": "",
+        "url": "/calculator/calc",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 480,
+        "wires": [
+            [
+                "ed5b43593b36445e"
+            ]
+        ]
+    },
+    {
+        "id": "c435e7ac9957ef1c",
+        "type": "http response",
+        "z": "4e06457bb2ac519c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 610,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "ed5b43593b36445e",
+        "type": "function",
+        "z": "4e06457bb2ac519c",
+        "name": "function 1",
+        "func": "let op = msg.req.query.op;\nlet a = Number(msg.req.query.a);\nlet b = Number(msg.req.query.b);\nlet isRad = msg.req.query.isRad === \"true\";\n\nfunction toRad(x) {\n    return isRad ? x : x * Math.PI / 180;\n}\n\nswitch (op) {\n    case \"sin\": msg.payload = Math.sin(toRad(a)); break;\n    case \"cos\": msg.payload = Math.cos(toRad(a)); break;\n    case \"tan\": msg.payload = Math.tan(toRad(a)); break;\n\n    case \"ctg\":\n        let t = Math.tan(toRad(a));\n        msg.payload = (t === 0) ? \"ctg не определён\" : 1 / t;\n        break;\n\n    case \"pow\": msg.payload = Math.pow(a, b); break;\n    case \"root\": msg.payload = Math.sqrt(a); break;\n    case \"exp\": msg.payload = Math.exp(a); break;\n    case \"pi\": msg.payload = Math.PI; break;\n\n    default:\n        msg.payload = \"Неизвестная операция\";\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 480,
+        "wires": [
+            [
+                "c435e7ac9957ef1c"
+            ]
+        ]
+    }
+]
